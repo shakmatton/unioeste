@@ -1,5 +1,5 @@
 import {mockWithImage} from "./camera-mock.js"
-import {loadGLTF, loadTexture, loadTextures, loadVideo} from "./loader.js"
+import {loadGLTF, loadTexture, loadTextures, loadVideo, loadAudio} from "./loader.js"
 import {CSS3DObject} from "./CSS3DRenderer.js"
 
 const THREE = window.MINDAR.IMAGE.THREE;
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const anchor = mindarThree.addAnchor(0);
 
-        anchor.group.add(pen.scene);
+        // anchor.group.add(pen.scene);
         // anchor.group.add(poetMosaic);
         
         anchor.group.add(emailIcon);
@@ -151,6 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.group.add(phoneIcon);
 
         anchor.group.add(portfolioGroup);
+
+        
+        const penAnchor = mindarThree.addAnchor(0);
+        penAnchor.group.add(pen.scene)       
+
+        
 
 
         // ====================   CSS3DOBJECT & CSSANCHOR   ===================
@@ -169,10 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const cssAnchor = mindarThree.addCSSAnchor(0);
         cssAnchor.group.add(textObj);
 
-
-
+        
+        
         // ====================   HANDLE BUTTONS & IMAGES  ====================
-
+        
         
         leftIcon.userData.clickable = true;
         rightIcon.userData.clickable = true;
@@ -180,11 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
         webIcon.userData.clickable = true;
         profileIcon.userData.clickable = true;
         locationIcon.userData.clickable = true;
-
+        
         portfolioItem0.userData.clickable = true;
         portfolioItem1.userData.clickable = true;
         portfolioItem0V.userData.clickable = true;
         // portfolioGroup.userData.clickable = true;
+        
+        pen.scene.userData.clickable = true;        
+        
+
+
+        // ====================   SOUND  ====================
+
+
+        const sound = await loadAudio("./assets/sounds/arpg_sound.mp3");
+        const listener = new THREE.AudioListener();
+        const audio = new THREE.PositionalAudio(listener) 
+
+        camera.add(listener);
+
+        penAnchor.group.add(audio)
+        
+        audio.setRefDistance(400)
+        audio.setBuffer(sound)
+        audio.setLoop(true)
 
 
         // ====================   INTERACTION LOGIC   ====================
@@ -192,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const portfolioItems = [portfolioItem0, portfolioItem1];
         let currentPortfolio = 0;
         
-        document.addEventListener('click', (e) => {
+        document.addEventListener("pointerdown", (e) => {
 
             const mouseX = (e.clientX / window.innerWidth) * 2 - 1;
             const mouseY = -1 * (e.clientY / window.innerHeight) * 2 - 1;
@@ -212,6 +237,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 if (o.userData.clickable) {
+                    if (o === pen.scene) {
+                        audio.play();
+                    }
+                    else 
                     if (o === leftIcon || o === rightIcon) {
                         if (o === leftIcon) {
                             currentPortfolio = (currentPortfolio - 1 + portfolioItems.length) 
@@ -244,32 +273,30 @@ document.addEventListener('DOMContentLoaded', () => {
                             else {
                                 portfolioItem0Video.pause();
                                 }
-                            }
-                            
+                            }                            
                             else if (o === webIcon) {
                                 textObj.visible = true;
                                 textElement.innerHTML = "https://amenteemaravilhosa.com.br/biografia-de-alejandra-pizarnik/";
                                 }
-
                                 else if (o === emailIcon) {
                                     textObj.visible = true;
                                     textElement.innerHTML = "pizarnik [at] gmail.com";
                                     }
-
                                     else if (o === profileIcon) {
                                         textObj.visible = true;
                                         textElement.innerHTML = "https://ar.linkedin.com/in/alejandra-pizarnik-b95a1a86"
                                         }
-
                                         else if (o === locationIcon) {
                                             textObj.visible = true;
                                             textElement.innerHTML = "Buenos Aires, Argentina"; 
                                         }
-
                                             else if (o === phoneIcon) {
                                                 textObj.visible = true;
                                                 textElement.innerHTML = "(54) 55 5555-5555";
                                             }
+                                                else if (o === pen.scene) {
+                                                    audio.play();
+                                                }
 
                 }
             } 
