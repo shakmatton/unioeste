@@ -46,12 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = new THREE.Mesh(planeGeometry, cardMaterial);
 
     const iconGeometry = new THREE.CircleGeometry(0.075, 32);
+
     const emailMaterial = new THREE.MeshBasicMaterial({map: emailTexture});
     const webMaterial = new THREE.MeshBasicMaterial({map: webTexture});
     const profileMaterial = new THREE.MeshBasicMaterial({map: profileTexture});
     const locationMaterial = new THREE.MeshBasicMaterial({map: locationTexture});
     const leftMaterial = new THREE.MeshBasicMaterial({map: leftTexture});
     const rightMaterial = new THREE.MeshBasicMaterial({map: rightTexture});
+    
     const emailIcon = new THREE.Mesh(iconGeometry, emailMaterial);
     const webIcon = new THREE.Mesh(iconGeometry, webMaterial);
     const profileIcon = new THREE.Mesh(iconGeometry, profileMaterial);
@@ -63,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     portfolioItem0Video.muted = true;
     const portfolioItem0VideoTexture = new THREE.VideoTexture(portfolioItem0Video);
     const portfolioItem0VideoMaterial = new THREE.MeshBasicMaterial({map: portfolioItem0VideoTexture});
+    
     const portfolioItem0Material = new THREE.MeshBasicMaterial({map: portfolioItem0Texture});
     const portfolioItem1Material = new THREE.MeshBasicMaterial({map: portfolioItem1Texture});
     const portfolioItem2Material = new THREE.MeshBasicMaterial({map: portfolioItem2Texture});
@@ -102,8 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const textElement = document.createElement("div");
     const textObj = new CSS3DObject(textElement);
+
     textObj.position.set(0, -1000, 0);
     textObj.visible = false;
+
     textElement.style.background = "#FFFFFF";
     textElement.style.padding = "30px";
     textElement.style.fontSize = "60px";
@@ -194,10 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const clock = new THREE.Clock();
     await mindarThree.start();
+
     renderer.setAnimationLoop(() => {
+
       const delta = clock.getDelta();
       const elapsed = clock.getElapsedTime();
+      
       const iconScale = 1 + 0.2 * Math.sin(elapsed*5);
+      
       [webIcon, emailIcon, profileIcon, locationIcon].forEach((icon) => {
 	icon.scale.set(iconScale, iconScale, iconScale);
       });
