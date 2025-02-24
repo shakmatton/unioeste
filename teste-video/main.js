@@ -1,4 +1,4 @@
-import {mockWithVideo} from "./camera-mock.js"
+//import {mockWithVideo} from "./camera-mock.js"
 import {loadVideo} from "./loader.js"
 
 const THREE = window.MINDAR.IMAGE.THREE
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const start = async() => {
 
-        mockWithVideo("./sintel.mp4");
+        //mockWithVideo("./sintel.mp4");
         
         const mindarThree = new window.MINDAR.IMAGE.MindARThree({
             container: document.body,

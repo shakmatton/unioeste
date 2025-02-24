@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Unioeste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Oficina de criação de experiências digitais interativas no espaço com Realidade Aumentada</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            background-image: url('background_1.jpg'); /* Adicione o caminho correto */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .container {
-            padding: 20px;
+            display: flex;
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .project-list {
+            width: 53%;
+            padding: 8px;
         }
         h1 {
-            color: #006699;
+            color: #007BFF;
+            text-align: center;
+            margin-bottom: 20px;
         }
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         li {
@@ -26,38 +49,96 @@
         }
         a {
             text-decoration: none;
-            color: #006699;
+            color: #007BFF;
             font-weight: bold;
+            display: block;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
         }
         a:hover {
-            text-decoration: underline;
+            background: yellow;
+            color: black;
         }
         .subproject {
-            color: #ff6347; /* Cor diferente para os subprojetos */
+            color: #DC3545;
         }
-        .subproject:hover {
-            text-decoration: underline;
+        .preview {
+            width: 40%;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
-    </style>
+        .preview img {
+            max-width: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .show {
+            opacity: 1;
+        }
+
+        #drive-link {
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s ease, background 0.3s ease;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        #drive-link:hover {
+            color: black;
+            background: yellow;
+            cursor: pointer;
+        }
+    </style>        
 </head>
+
 <body>
     <div class="container">
-        <h1>Projetos Unioeste</h1>
-        <ul>
-            <li><a class="subproject" href="imagem-inicio/index.html">Imagem Inicio</a></li>
-            <li><a class="subproject" href="imagem-inicio2/index.html">Imagem Inicio 2</a></li>
-            <li><a class="subproject" href="imagem-mock/index.html">Imagem Mock</a></li>
-            <li><a class="subproject" href="imagem-models/index.html">Imagem Models</a></li>
-            <li><a class="subproject" href="imagem-models2/index.html">Imagem Models 2</a></li>
-            <li><a class="subproject" href="teste-imagens/index.html">Teste Imagens</a></li>
-            <li><a class="subproject" href="teste-video/index.html">Teste Vídeo</a></li>
-            <li><a class="subproject" href="css-renderer/index.html">CSS Renderer</a></li>
-            <li><a class="subproject" href="teste-animations/index.html">Teste Animations</a></li>
-            <li><a class="subproject" href="teste-interactions/index.html">Teste Interactions</a></li>
-            <li><a class="subproject" href="projeto-final/index.html">Projeto Final</a></li>
-            <li><a class="subproject" href="arpg/index.html">ARPG</a></li>
-            <li><a class="subproject" href="ultimate-final-project/index.html">Ultimate Final Project</a></li>
-        </ul>
+        <div class="project-list">
+            <h1><a href="https://drive.google.com/drive/folders/1MbYjvc8DOWFT58hK6F5MuKe6uFFIHGhj?usp=sharing" id="drive-link">Instruções e arquivos (clique aqui)</a></h1>            
+            <ul>
+                <li><a class="subproject" href="arpg/index.html" data-image="arpg/OIG4.jpeg">ARPG</a></li>
+                <li><a class="subproject" href="chef/index.html" data-image="chef/assets/chef.jpg">Chef</a></li>
+                <li><a class="subproject" href="projeto-final/index.html" data-image="projeto-final/assets/imgs/poetisa-mosaico.jpg">Projeto Final</a></li>
+                <li><a class="subproject" href="ultimate-final-project/index.html" data-image="ultimate-final-project/imgs/card.png">Ultimate Final Project</a></li>
+                <li><a class="subproject" href="imagem-inicio/index.html" data-image="imagem-inicio/musicband-raccoon.png">1 - Imagem Inicio</a></li>
+                <li><a class="subproject" href="imagem-inicio2/index.html" data-image="imagem-inicio2/polo.jpg">2 - Imagem Inicio 2</a></li>
+                <li><a class="subproject" href="imagem-mock/index.html" data-image="imagem-mock/mock.png">3 - Imagem Mock</a></li>
+                <li><a class="subproject" href="imagem-models/index.html" data-image="imagem-models/lowpolywell.png">4 - Imagem Models</a></li>
+                <li><a class="subproject" href="imagem-models2/index.html" data-image="imagem-models2/imagens/recalque2.jpg">5 - Imagem Models 2</a></li>
+                <li><a class="subproject" href="teste-imagens/index.html" data-image="teste-imagens/sesi.jpg">6 - Teste Imagens</a></li>
+                <li><a class="subproject" href="teste-video/index.html" data-image="teste-video/sintel.jpg">7 - Teste Vídeo</a></li>
+                <li><a class="subproject" href="css-renderer/index.html" data-image="css-renderer/Piedra que canta verso.jpg">8 - CSS Renderer</a></li>
+                <li><a class="subproject" href="teste-animations/index.html" data-image="teste-animations/musicband-bear.png">9 - Teste Animations</a></li>
+                <li><a class="subproject" href="multi-detect/index.html" data-image="multi-detect/multi-detect.png">10 - Multi Detect</a></li>
+                <li><a class="subproject" href="multi-track/index.html" data-image="multi-track/multi-track.png">11 - Multi Tracking</a></li>
+                <li><a class="subproject" href="teste-audio/index.html" data-image="teste-audio/soundcheck.jpg">12 - Teste Áudio</a></li>
+            </ul>
+        </div>
+        <div class="preview">
+            <img id="preview-img" src="" alt="">
+        </div>
     </div>
+    <script>
+        const links = document.querySelectorAll('.subproject');
+        const previewImg = document.getElementById('preview-img');
+
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                const imgSrc = link.getAttribute('data-image');
+                previewImg.src = imgSrc;
+                previewImg.classList.add('show');
+            });
+
+            link.addEventListener('mouseout', () => {
+                previewImg.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>

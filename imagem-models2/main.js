@@ -1,4 +1,4 @@
-import {mockWithImage} from "./camera-mock.js"
+// import {mockWithImage} from "./camera-mock.js"
 import {loadGLTF, loadTexture} from "./loader.js"
 
 const THREE = window.MINDAR.IMAGE.THREE
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const start = async() => {
 
-        mockWithImage("./imagens/valvula_de_recalque.jpg");
+        // mockWithImage("./imagens/valvula_de_recalque.jpg");
 
         const mindarThree = new window.MINDAR.IMAGE.MindARThree({
             container: document.body,

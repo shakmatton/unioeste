@@ -1,0 +1,257 @@
+{
+    "asset" : {
+        "copyright" : "Iuri Cordeiro",
+        "generator" : "Khronos glTF Blender I/O v3.4.49",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sphere.001",
+            "scale" : [
+                0.16211794316768646,
+                0.12406688928604126,
+                0.16211794316768646
+            ]
+        }
+    ],
+    "animations" : [
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 0,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "Sphere.001Action",
+            "samplers" : [
+                {
+                    "input" : 8,
+                    "interpolation" : "LINEAR",
+                    "output" : 9
+                }
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material.005",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8000000715255737,
+                    0.011057132855057716,
+                    0.02303280495107174,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.4000000059604645
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material.006",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.01342200767248869,
+                    0.2956915497779846,
+                    0.006081782281398773,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.4000000059604645
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Sphere.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "TEXCOORD_0" : 1,
+                        "NORMAL" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "TEXCOORD_0" : 5,
+                        "NORMAL" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 6922,
+            "max" : [
+                0.8653665781021118,
+                1.421067476272583,
+                0.872564971446991
+            ],
+            "min" : [
+                -0.8485714197158813,
+                -1.0239067077636719,
+                -0.8131041526794434
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 6922,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 6922,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 35400,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 7559,
+            "max" : [
+                0.26711392402648926,
+                1.9049049615859985,
+                0.27808958292007446
+            ],
+            "min" : [
+                -0.29316797852516174,
+                1.2660006284713745,
+                -0.26012375950813293
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 7559,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 7559,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 40800,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 90,
+            "max" : [
+                3
+            ],
+            "min" : [
+                0.03333333333333333
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 90,
+            "type" : "VEC4"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 83064,
+            "byteOffset" : 0,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 55376,
+            "byteOffset" : 83064,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 83064,
+            "byteOffset" : 138440,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 70800,
+            "byteOffset" : 221504,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 90708,
+            "byteOffset" : 292304,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60472,
+            "byteOffset" : 383012,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 90708,
+            "byteOffset" : 443484,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 81600,
+            "byteOffset" : 534192,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 360,
+            "byteOffset" : 615792
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1440,
+            "byteOffset" : 616152
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 617592,
+            "uri" : "Piment\u00e3o.bin"
+        }
+    ]
+}

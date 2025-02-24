@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const raccoonAnchor = mindarThree.addAnchor(0);
         raccoonAnchor.group.add(raccoon.scene);
 
+        
         // =================   AUDIO   =================
+
 
         const audioClip = await loadAudio('./musicband-background.mp3')
 
